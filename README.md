@@ -1,4 +1,4 @@
-# Portf-y
+# Portföy
 
 A production-style personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. The project presents profile, skills, selected work, experience, and contact details through a polished single-page interface with a strong visual identity.
 
