@@ -1,7 +1,7 @@
-import { experience } from '../../data/portfolio';
-import { Container } from '../ui/Container';
-import { SectionTitle } from '../ui/SectionTitle';
-import { WindowCard } from '../ui/WindowCard';
+import { experience } from "../../data/portfolio";
+import { Container } from "../ui/Container";
+import { SectionTitle } from "../ui/SectionTitle";
+import { WindowCard } from "../ui/WindowCard";
 
 export function ExperienceSection() {
   return (
@@ -10,15 +10,19 @@ export function ExperienceSection() {
         <SectionTitle
           eyebrow="Deneyim"
           title="Profesyonel yolculuğumun kısa bir özeti."
-          description="Üzerinde çalıştığım ekiplerde ürün ihtiyaçlarını kullanıcı deneyimi, arayüz kalitesi ve sürdürülebilir frontend yapılarıyla destekledim."
+          description="Yer aldığım ekiplerde ürün ihtiyaçlarını kullanıcı deneyimi, arayüz kalitesi ve sürdürülebilir frontend çözümleriyle destekledim."
         />
         <div className="mt-10 space-y-6">
           {experience.map((item) => (
             <WindowCard key={`${item.company}-${item.role}-${item.period}`}>
               <div className="grid gap-5 lg:grid-cols-[0.35fr_0.65fr] lg:items-center">
                 <div>
-                  <p className="font-accent text-2xl text-olive">{item.period}</p>
-                  <h3 className="mt-3 font-display text-2xl text-coral">{item.role}</h3>
+                  <p className="font-accent text-2xl text-olive">
+                    {item.period}
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl text-coral">
+                    {item.role}
+                  </h3>
                   <p className="mt-2 text-base text-ink">{item.company}</p>
                 </div>
                 <div>
