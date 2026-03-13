@@ -1,20 +1,20 @@
 # Portf-y
 
-A production-style personal portfolio built with React, TypeScript, Vite, and Tailwind CSS. The project presents profile, skills, selected work, experience, and contact details through a polished single-page interface with a strong visual identity.
+React, TypeScript, Vite ve Tailwind CSS ile geliştirilen modern bir kişisel portfolyo projesi. Bu uygulama; profil, yetenekler, öne çıkan projeler, deneyim ve iletişim bilgilerini güçlü bir görsel dil ile tek sayfalık bir yapıda sunar.
 
-## Overview
+## Genel Bakış
 
-This repository contains a portfolio website focused on frontend engineering presentation. It is structured as a reusable component-based application and uses static portfolio data to render sections such as hero, about, skills, projects, experience, and contact.
+Bu repo, frontend odaklı kişisel portfolyo websitesini içerir. Proje; yeniden kullanılabilir bileşen mimarisiyle kurgulanmıştır ve `hero`, `hakkımda`, `yetenekler`, `projeler`, `deneyim` ve `iletişim` gibi bölümleri statik veri yapısı üzerinden üretir.
 
-## Highlights
+## Öne Çıkanlar
 
-- Responsive single-page portfolio experience
-- Component-driven architecture for easier maintenance
-- Centralized content management through `src/data/portfolio.ts`
-- Optimized visual assets for project showcases
-- Fast local development and build pipeline with Vite
+- Responsive tek sayfa portfolyo deneyimi
+- Bakımı kolay bileşen tabanlı mimari
+- `src/data/portfolio.ts` üzerinden merkezi içerik yönetimi
+- Proje vitrinleri için optimize edilmiş görseller
+- Vite ile hızlı geliştirme ve build süreci
 
-## Tech Stack
+## Teknoloji Yığını
 
 - React 18
 - TypeScript
@@ -22,35 +22,35 @@ This repository contains a portfolio website focused on frontend engineering pre
 - Tailwind CSS 3
 - PostCSS
 
-## Project Structure
+## Proje Yapısı
 
 ```text
 src/
-  assets/                Static images and optimized media
+  assets/                Statik görseller ve optimize medya dosyaları
   components/
-    layout/              Shared layout primitives
-    sections/            Page-level sections
-    ui/                  Reusable UI building blocks
+    layout/              Genel yerleşim bileşenleri
+    sections/            Sayfa bölümleri
+    ui/                  Yeniden kullanılabilir arayüz bileşenleri
   data/
-    portfolio.ts         Portfolio content source
-  App.tsx                Main page composition
-  main.tsx               Application entry point
+    portfolio.ts         Portfolyo içerik kaynağı
+  App.tsx                Ana sayfa kompozisyonu
+  main.tsx               Uygulama giriş noktası
 ```
 
-## Getting Started
+## Başlangıç
 
-### Prerequisites
+### Gereksinimler
 
 - Node.js 18+
 - npm 9+
 
-### Installation
+### Kurulum
 
 ```bash
 npm install
 ```
 
-### Run Locally
+### Geliştirme Ortamı
 
 ```bash
 npm run dev
@@ -62,36 +62,36 @@ npm run dev
 npm run build
 ```
 
-### Preview Build
+### Build Önizleme
 
 ```bash
 npm run preview
 ```
 
-## Available Scripts
+## Kullanılabilir Scriptler
 
-- `npm run dev`: Starts the Vite development server
-- `npm run build`: Compiles TypeScript and creates a production build
-- `npm run preview`: Serves the production build locally
+- `npm run dev`: Vite geliştirme sunucusunu başlatır
+- `npm run build`: TypeScript derlemesi yapar ve production build üretir
+- `npm run preview`: Production build'i lokal ortamda önizler
 
-## Customization
+## Özelleştirme
 
-Most portfolio content is managed from [`src/data/portfolio.ts`](./src/data/portfolio.ts). Update that file to change:
+Portfolyo içeriğinin büyük bölümü [`src/data/portfolio.ts`](./src/data/portfolio.ts) dosyasından yönetilir. Bu dosya üzerinden aşağıdaki alanları güncelleyebilirsiniz:
 
-- Navigation labels
-- Hero content
-- About and contact details
-- Skill groups
-- Project cards and links
-- Experience timeline
+- Navigasyon başlıkları
+- Hero alanı içeriği
+- Hakkımda ve iletişim bilgileri
+- Yetenek grupları
+- Proje kartları ve linkleri
+- Deneyim zaman akışı
 
-## Deployment
+## Yayınlama
 
-The project is suitable for deployment on platforms such as Vercel, Netlify, or GitHub Pages after running the production build.
+Production build alındıktan sonra proje Vercel, Netlify veya GitHub Pages gibi platformlara kolayca deploy edilebilir.
 
-## Repository Setup
+## Repo Kurulumu
 
-If this is the first push for the repository:
+Repo ilk kez push edilecekse:
 
 ```bash
 git init
@@ -102,8 +102,7 @@ git remote add origin https://github.com/cansu05/portf-y.git
 git push -u origin main
 ```
 
-## Contact
+## İletişim
 
 - GitHub: https://github.com/cansu05
 - LinkedIn: https://www.linkedin.com/in/cansuugur/
-
