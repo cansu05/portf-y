@@ -1,4 +1,4 @@
-# Portf-y
+# Portföy
 
 React, TypeScript, Vite ve Tailwind CSS ile geliştirilen modern bir kişisel portfolyo projesi. Bu uygulama; profil, yetenekler, öne çıkan projeler, deneyim ve iletişim bilgilerini güçlü bir görsel dil ile tek sayfalık bir yapıda sunar.
 
