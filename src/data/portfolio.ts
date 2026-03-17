@@ -4,6 +4,7 @@ import taskManagement from "../assets/optimized/taskManagement.opt.jpg";
 import arekaWebsite from "../assets/optimized/areka-website.opt.jpg";
 import noteApp from "../assets/optimized/note-app.opt.jpg";
 import blossom from "../assets/optimized/blossom.opt.jpg";
+import lilyaPlanner from "../assets/lilyaPlanner.opt.png";
 import scandleted1 from "../assets/optimized/scandleted-1.opt.jpg";
 import scandleted2 from "../assets/optimized/scandleted-2.opt.jpg";
 import scandleted3 from "../assets/optimized/scandleted-3.opt.jpg";
@@ -73,7 +74,7 @@ export const heroContent = {
   secondaryCta: { label: "İletişime Geç", href: "#contact" },
   stats: [
     { label: "Yıl Deneyim", value: "3+" },
-    { label: "Canlı Proje", value: "9" },
+    { label: "Canlı Proje", value: "10" },
     { label: "Odak", value: "Frontend" },
   ],
   image: profileImage,
@@ -128,6 +129,15 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 export const projects: Project[] = [
+  {
+    id: "lilya-planner",
+    images: [lilyaPlanner],
+    url: "https://lliya-planner.vercel.app/",
+    github: "https://github.com/cansu05/Lliya-Planner",
+    title: "Lilya Planner - Planlama Uygulaması",
+    text: "Günlük ve haftalık planları, etkinlikleri ve kişisel akışı düzenlemeye odaklanan planlama sitesi.",
+    tags: ["React", "Planlama", "Verimlilik"],
+  },
   {
     id: "lilya-estate",
     images: [lilyaEstate1, lilyaEstate2, lilyaEstate3],
@@ -275,3 +285,4 @@ export const contactMethods: ContactMethod[] = [
   },
   { label: "Adres", value: "Ankara", href: "#contact" },
 ];
+
