@@ -1,3 +1,4 @@
+import { trackEvent } from '../../lib/analytics';
 import { contactMethods } from '../../data/portfolio';
 import { Container } from '../ui/Container';
 import { SectionTitle } from '../ui/SectionTitle';
@@ -20,6 +21,13 @@ export function ContactSection() {
                   key={method.label}
                   href={method.href}
                   className="rounded-[24px] border border-ivory/80 bg-ivory/90 p-5 transition hover:-translate-y-0.5 hover:bg-ivory"
+                  onClick={() =>
+                    trackEvent('contact_click', {
+                      contact_label: method.label,
+                      contact_value: method.value,
+                      contact_target: method.href,
+                    })
+                  }
                 >
                   <p className="text-sm uppercase tracking-[0.18em] text-coral">{method.label}</p>
                   <p className="mt-3 break-all text-base text-ink">{method.value}</p>

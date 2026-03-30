@@ -80,12 +80,35 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
         <div className="mt-6 flex flex-wrap gap-3">
           {project.url ? (
-            <ButtonLink href={project.url} target="_blank" rel="noreferrer">
+            <ButtonLink
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              trackingEventName="project_click"
+              trackingParams={{
+                project_id: project.id,
+                project_title: project.title,
+                destination_type: 'live',
+                destination_url: project.url,
+              }}
+            >
               Canlı Proje
             </ButtonLink>
           ) : null}
           {project.github ? (
-            <ButtonLink href={project.github} variant="secondary" target="_blank" rel="noreferrer">
+            <ButtonLink
+              href={project.github}
+              variant="secondary"
+              target="_blank"
+              rel="noreferrer"
+              trackingEventName="project_click"
+              trackingParams={{
+                project_id: project.id,
+                project_title: project.title,
+                destination_type: 'github',
+                destination_url: project.github,
+              }}
+            >
               GitHub
             </ButtonLink>
           ) : null}

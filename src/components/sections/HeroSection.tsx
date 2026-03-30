@@ -7,7 +7,7 @@ import { WindowCard } from '../ui/WindowCard';
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden pb-12 pt-10 sm:pb-16 sm:pt-14">
+    <section id="home" className="relative overflow-hidden pb-12 pt-10 sm:pb-16 sm:pt-14">
       <div className="absolute inset-x-0 top-0 -z-10 h-[540px] bg-[radial-gradient(circle_at_top_left,_rgba(255,189,232,0.6),_transparent_32%),radial-gradient(circle_at_top_right,_rgba(153,176,237,0.45),_transparent_28%),linear-gradient(180deg,_#f4efe4_0%,_#fffaed_100%)]" />
       <Container className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(420px,500px)] lg:items-start">
         <div className="animate-rise">
@@ -17,14 +17,33 @@ export function HeroSection() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/80">{heroContent.description}</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <ButtonLink href={heroContent.primaryCta.href}>{heroContent.primaryCta.label}</ButtonLink>
-            <ButtonLink href={heroContent.secondaryCta.href} variant="secondary">
+            <ButtonLink
+              href={heroContent.primaryCta.href}
+              trackingEventName="navigation_click"
+              trackingParams={{ link_name: heroContent.primaryCta.label, link_target: heroContent.primaryCta.href }}
+            >
+              {heroContent.primaryCta.label}
+            </ButtonLink>
+            <ButtonLink
+              href={heroContent.secondaryCta.href}
+              variant="secondary"
+              trackingEventName="navigation_click"
+              trackingParams={{ link_name: heroContent.secondaryCta.label, link_target: heroContent.secondaryCta.href }}
+            >
               {heroContent.secondaryCta.label}
             </ButtonLink>
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             {socials.map((social) => (
-              <ButtonLink key={social.id} href={social.href} variant="secondary" target="_blank" rel="noreferrer">
+              <ButtonLink
+                key={social.id}
+                href={social.href}
+                variant="secondary"
+                target="_blank"
+                rel="noreferrer"
+                trackingEventName={social.id === 'resume' ? 'resume_click' : 'social_click'}
+                trackingParams={{ social_id: social.id, social_name: social.name, social_url: social.href }}
+              >
                 {social.name}
               </ButtonLink>
             ))}
