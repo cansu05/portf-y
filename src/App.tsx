@@ -1,12 +1,17 @@
-import { useEffect } from 'react';
-import { AboutSection } from './components/sections/AboutSection';
-import { ContactSection } from './components/sections/ContactSection';
-import { ExperienceSection } from './components/sections/ExperienceSection';
-import { HeroSection } from './components/sections/HeroSection';
-import { ProjectsSection } from './components/sections/ProjectsSection';
-import { SkillsSection } from './components/sections/SkillsSection';
-import { Header } from './components/layout/Header';
-import { getGtmId, initAnalytics, trackPageView, trackSectionView } from './lib/analytics';
+import { useEffect } from "react";
+import { AboutSection } from "./components/sections/AboutSection";
+import { ContactSection } from "./components/sections/ContactSection";
+import { ExperienceSection } from "./components/sections/ExperienceSection";
+import { HeroSection } from "./components/sections/HeroSection";
+import { ProjectsSection } from "./components/sections/ProjectsSection";
+import { SkillsSection } from "./components/sections/SkillsSection";
+import { Header } from "./components/layout/Header";
+import {
+  getGtmId,
+  initAnalytics,
+  trackPageView,
+  trackSectionView,
+} from "./lib/analytics";
 
 function App() {
   useEffect(() => {
@@ -17,15 +22,17 @@ function App() {
       trackPageView();
     };
 
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('main section[id]'));
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("main section[id]"),
+    );
     if (!sections.length) {
       return;
     }
@@ -38,7 +45,7 @@ function App() {
           }
 
           const element = entry.target as HTMLElement;
-          const heading = element.querySelector('h1, h2');
+          const heading = element.querySelector("h1, h2");
           trackSectionView(element.id, heading?.textContent?.trim());
         });
       },
@@ -62,7 +69,7 @@ function App() {
             src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
             height="0"
             width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
+            style={{ display: "none", visibility: "hidden" }}
             title="google-tag-manager"
           />
         </noscript>

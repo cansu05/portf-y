@@ -1,117 +1,118 @@
-import { useState } from 'react';
-import { projects } from '../../data/portfolio';
-import type { Project } from '../../types';
-import { ButtonLink } from '../ui/ButtonLink';
-import { Container } from '../ui/Container';
-import { Pill } from '../ui/Pill';
-import { SectionTitle } from '../ui/SectionTitle';
+import { projects } from "../../data/portfolio";
+import type { Project, ProjectFeature } from "../../types";
+import { ButtonLink } from "../ui/ButtonLink";
+import { Container } from "../ui/Container";
+import {
+  ExternalArrowIcon,
+  FeatureIcon,
+  GitHubIcon,
+  featureIconStyles,
+} from "../ui/ProjectIcons";
+import { SectionTitle } from "../ui/SectionTitle";
 
-type ProjectCardProps = {
+type ProjectShowcaseProps = {
   project: Project;
+  index: number;
 };
 
-function ProjectCard({ project }: ProjectCardProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const hasMultipleImages = project.images.length > 1;
+function ProjectFeatures({ features }: { features: ProjectFeature[] }) {
+  return (
+    <div className="mt-9 grid gap-6 sm:grid-cols-3">
+      {features.map((feature) => (
+        <div key={feature.title} className="min-w-0">
+          <span
+            className={`flex h-12 w-12 items-center justify-center rounded-full ${featureIconStyles[feature.icon]}`}
+          >
+            <FeatureIcon icon={feature.icon} />
+          </span>
+          <h4 className="mt-4 text-sm font-bold text-ink">{feature.title}</h4>
+          <p className="mt-2 text-sm leading-6 text-ink/65">{feature.text}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-  const showPrevious = () => {
-    setActiveIndex((current) => (current === 0 ? project.images.length - 1 : current - 1));
-  };
+function ProjectActions({ project }: { project: Project }) {
+  return (
+    <div className="mt-9 flex flex-wrap gap-4">
+      {project.url ? (
+        <ButtonLink
+          href={project.url}
+          target="_blank"
+          rel="noreferrer"
+          trackingEventName="project_click"
+          trackingParams={{
+            project_id: project.id,
+            project_title: project.title,
+            destination_type: "live",
+            destination_url: project.url,
+          }}
+          className="min-w-44 gap-3 bg-[#67b8ad] text-ivory shadow-none hover:bg-[#5aa99f]"
+        >
+          <span>Canlı Proje</span>
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-ivory/25 text-ivory">
+            <ExternalArrowIcon />
+          </span>
+        </ButtonLink>
+      ) : null}
+      {project.github ? (
+        <ButtonLink
+          href={project.github}
+          variant="secondary"
+          target="_blank"
+          rel="noreferrer"
+          trackingEventName="project_click"
+          trackingParams={{
+            project_id: project.id,
+            project_title: project.title,
+            destination_type: "github",
+            destination_url: project.github,
+          }}
+          className="min-w-44 gap-3 border-ink/10 bg-transparent text-ink shadow-none hover:bg-ivory/50"
+        >
+          <span>GitHub</span>
+          <GitHubIcon />
+        </ButtonLink>
+      ) : null}
+    </div>
+  );
+}
 
-  const showNext = () => {
-    setActiveIndex((current) => (current === project.images.length - 1 ? 0 : current + 1));
-  };
+function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
+  const [projectName, projectKind = "Ürün deneyimi"] =
+    project.title.split(" - ");
 
   return (
-    <article className="overflow-hidden rounded-[30px] border border-ink/5 bg-ivory shadow-card">
-      <div className="relative h-72 overflow-hidden bg-powder sm:h-80">
-        <img
-          src={project.images[activeIndex]}
-          alt={project.title}
-          className="h-full w-full object-cover object-top transition duration-300"
-          loading="lazy"
-          decoding="async"
-        />
-        {hasMultipleImages ? (
-          <>
-            <button
-              type="button"
-              aria-label="Önceki görsel"
-              onClick={showPrevious}
-              className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/95 text-lg text-ink shadow-sm transition hover:bg-ivory"
-            >
-              <span aria-hidden="true">‹</span>
-            </button>
-            <button
-              type="button"
-              aria-label="Sonraki görsel"
-              onClick={showNext}
-              className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/95 text-lg text-ink shadow-sm transition hover:bg-ivory"
-            >
-              <span aria-hidden="true">›</span>
-            </button>
-            <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2 rounded-full bg-ivory/85 px-3 py-2 shadow-sm">
-              {project.images.map((image, index) => (
-                <button
-                  key={`${project.id}-${image}`}
-                  type="button"
-                  aria-label={`${index + 1}. görsele git`}
-                  onClick={() => setActiveIndex(index)}
-                  className={`flex h-8 w-8 items-center justify-center rounded-full transition ${
-                    activeIndex === index ? 'bg-ivory' : 'bg-transparent'
-                  }`}
-                >
-                  <span
-                    className={`h-2.5 w-2.5 rounded-full ${activeIndex === index ? 'bg-coral' : 'bg-ink/25'}`}
-                  />
-                </button>
-              ))}
-            </div>
-          </>
-        ) : null}
-      </div>
-      <div className="p-6">
-        <h3 className="font-display text-2xl text-coral">{project.title}</h3>
-        <p className="mt-3 text-sm leading-6 text-ink/78">{project.text}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <Pill key={tag}>{tag}</Pill>
-          ))}
+    <article className="relative py-12">
+      <div className="grid items-center gap-20 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="max-w-2xl">
+          <h3 className="mt-8 font-display text-3xl leading-tight text-ink sm:text-4xl lg:text-5xl">
+            {projectName}
+          </h3>
+          <p className="mt-3 text-xl font-semibold text-[#67b8ad] sm:text-2xl">
+            {projectKind}
+          </p>
+          <div className="mt-4 h-1 w-28 rounded-full bg-pink" />
+
+          <p className="mt-7 text-base leading-8 text-ink/75 sm:text-lg">
+            {project.text}
+          </p>
+
+          {project.features?.length ? (
+            <ProjectFeatures features={project.features} />
+          ) : null}
+          <ProjectActions project={project} />
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
-          {project.url ? (
-            <ButtonLink
-              href={project.url}
-              target="_blank"
-              rel="noreferrer"
-              trackingEventName="project_click"
-              trackingParams={{
-                project_id: project.id,
-                project_title: project.title,
-                destination_type: 'live',
-                destination_url: project.url,
-              }}
-            >
-              Canlı Proje
-            </ButtonLink>
-          ) : null}
-          {project.github ? (
-            <ButtonLink
-              href={project.github}
-              variant="secondary"
-              target="_blank"
-              rel="noreferrer"
-              trackingEventName="project_click"
-              trackingParams={{
-                project_id: project.id,
-                project_title: project.title,
-                destination_type: 'github',
-                destination_url: project.github,
-              }}
-            >
-              GitHub
-            </ButtonLink>
-          ) : null}
+
+        <div className="relative">
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className="w-full object-contain object-center"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </article>
@@ -122,10 +123,13 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-16 sm:py-20">
       <Container>
-        <SectionTitle eyebrow="Projeler" title="Üzerinde çalıştığım ürünler ve arayüz deneyimleri." />
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+        <SectionTitle
+          eyebrow="Projeler"
+          title="Üzerinde çalıştığım ürünler ve arayüz deneyimleri."
+        />
+        <div className=" divide-y divide-ink/10">
+          {projects.map((project, index) => (
+            <ProjectShowcase key={project.id} project={project} index={index} />
           ))}
         </div>
       </Container>

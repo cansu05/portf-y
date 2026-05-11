@@ -1,37 +1,14 @@
 import profileImage from "../assets/me-optimized.jpg";
-import rickAndMorty from "../assets/optimized/rickAndMorty.opt.jpg";
-import taskManagement from "../assets/optimized/taskManagement.opt.jpg";
-import arekaWebsite from "../assets/optimized/areka-website.opt.jpg";
-import noteApp from "../assets/optimized/note-app.opt.jpg";
-import blossom from "../assets/optimized/blossom.opt.jpg";
-import lilyaPlanner from "../assets/lilyaPlanner.opt.png";
-import scandleted1 from "../assets/optimized/scandleted-1.opt.jpg";
-import scandleted2 from "../assets/optimized/scandleted-2.opt.jpg";
-import scandleted3 from "../assets/optimized/scandleted-3.opt.jpg";
-import scandleted4 from "../assets/optimized/scandleted-4.opt.jpg";
-import scandleted5 from "../assets/optimized/scandleted-5.opt.jpg";
-import lilyaEstate1 from "../assets/optimized/lilya-estate-1.opt.jpg";
-import lilyaEstate2 from "../assets/optimized/lilya-estate-2.opt.jpg";
-import lilyaEstate3 from "../assets/optimized/real-estate-3.opt.jpg";
-import wessexDashboard1 from "../assets/optimized/dashboard1.opt.jpg";
-import wessexDashboard2 from "../assets/optimized/dashboard2.opt.jpg";
-import wessexDashboard3 from "../assets/optimized/dashboard3.opt.jpg";
-import wessexDashboard4 from "../assets/optimized/dashboard4.opt.jpg";
-import wessexDashboard5 from "../assets/optimized/dashboard5.opt.jpg";
-import wessexDashboard6 from "../assets/optimized/dashboard6.opt.jpg";
-import wessexDashboard7 from "../assets/optimized/dashboard7.opt.jpg";
-import wessexDashboard8 from "../assets/optimized/dashboard8.opt.jpg";
-import wessexDashboard9 from "../assets/optimized/dashboard9.opt.jpg";
-import wessexDashboard10 from "../assets/optimized/dashboard10.opt.jpg";
-import wessexDashboard11 from "../assets/optimized/dashboard11.opt.jpg";
-import wessexDashboard12 from "../assets/optimized/dashboard12.opt.jpg";
-import wessexDashboard13 from "../assets/optimized/dashboard13.opt.jpg";
-import wessexDashboard14 from "../assets/optimized/dashboard14.opt.jpg";
-import wessexDashboard15 from "../assets/optimized/dashboard15.opt.jpg";
-import arekaDashboard1 from "../assets/optimized/areka-1.opt.jpg";
-import arekaDashboard2 from "../assets/optimized/areka-2.opt.jpg";
-import arekaDashboard3 from "../assets/optimized/areka-3.opt.jpg";
-import arekaDashboard5 from "../assets/optimized/areka-5.opt.jpg";
+import plannerProject from "../assets/planner-project.png";
+import estateProject from "../assets/estate-project.png";
+import scandletedProject from "../assets/scandleted-project.png";
+import arekaProject from "../assets/areka-project.png";
+import arekaDashboardProject from "../assets/areka-dashboard-project.png";
+import verilandProject from "../assets/veriland-project.png";
+import noteProject from "../assets/note-project.png";
+import botanicProject from "../assets/botanic-project.png";
+import tourShowProject from "../assets/tour.png";
+
 import type {
   AboutCard,
   ContactMethod,
@@ -130,110 +107,172 @@ export const skillGroups: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
+    id: "tour-show",
+    images: [tourShowProject],
+    url: "https://tour-show-platform-tour-app.vercel.app/tr",
+    title: "Tour Show - Tur Keşif ve Yönetim Platformu",
+    text: "Tour Show; kullanıcıların turları kolayca keşfetmesini sağlayan tur listeleme web sitesi ile işletmelerin tur içeriklerini, görsellerini ve yayın süreçlerini yönetebildiği admin dashboard deneyimini bir araya getiren turizm platformudur.",
+    tags: ["Next.js", "Turizm", "Dashboard", "İçerik Yönetimi"],
+    features: [
+      {
+        icon: "map",
+        title: "Tur keşif deneyimi",
+        text: "Kullanıcıların kategori, arama ve öne çıkan fırsatlar üzerinden uygun turları hızlıca bulmasını sağlar.",
+      },
+      {
+        icon: "list",
+        title: "Tur içerik yönetimi",
+        text: "Tur başlığı, açıklama, kategori, fiyatlandırma ve yayın durumlarını tek panelden düzenlemeyi kolaylaştırır.",
+      },
+    ],
+  },
+  {
     id: "lilya-planner",
-    images: [lilyaPlanner],
+    images: [plannerProject],
     url: "https://lliya-planner.vercel.app/",
     github: "https://github.com/cansu05/Lliya-Planner",
-    title: "Lilya Planner - Planlama Uygulaması",
-    text: "Günlük ve haftalık planları, etkinlikleri ve kişisel akışı düzenlemeye odaklanan planlama sitesi.",
+    title: "Lilya Planner - Sakin ve Odaklı Planlama Deneyimi",
+    text: "Lilya Planner; yoğun günleri daha net yönetmek isteyen kullanıcılar için günlük, haftalık ve aylık planlamayı tek bir sade arayüzde birleştiren kişisel planlama ürünüdür.",
     tags: ["React", "Planlama", "Verimlilik"],
+    features: [
+      {
+        icon: "calendar",
+        title: "Takvim odaklı planlama",
+        text: "Gün, hafta ve ay görünümleriyle kullanıcının zamanını daha net görmesini sağlar.",
+      },
+      {
+        icon: "list",
+        title: "Gündem akışı",
+        text: "Yaklaşan işler, odak blokları ve günlük özetlerle planlama sürecini sadeleştirir.",
+      },
+      {
+        icon: "filter",
+        title: "Kategori bazlı düzen",
+        text: "Kişisel, iş, sağlık ve randevu gibi alanlarla planları daha kolay ayrıştırır.",
+      },
+    ],
   },
   {
     id: "lilya-estate",
-    images: [lilyaEstate1, lilyaEstate2, lilyaEstate3],
+    images: [estateProject],
     url: "https://lilya-estate-web.vercel.app/",
     github: "https://github.com/cansu05/Lilya-Estate",
-    title: "Lilya Estate - Emlak Platformu",
-    text: "Kullanıcıların konum, filtre ve harita desteğiyle ilan arayabildiği emlak platformu.",
+    title: "Lilya Estate - Premium Emlak Keşif Platformu",
+    text: "Lilya Estate; kullanıcıların satılık ve kiralık mülkleri konum, mülk tipi ve ihtiyaçlarına göre keşfetmesini sağlayan, güven veren ve görsel sunumu güçlü bir emlak platformudur.",
     tags: ["React", "TypeScript", "Harita Entegrasyonu"],
+    features: [
+      {
+        icon: "map",
+        title: "Harita destekli keşif",
+        text: "Kullanıcının lokasyona göre mülk aramasını ve çevreyi daha hızlı değerlendirmesini sağlar.",
+      },
+      {
+        icon: "filter",
+        title: "Akıllı ilan filtreleme",
+        text: "Şehir, ilan tipi, oda sayısı ve mülk türü gibi kriterlerle arama sürecini hızlandırır.",
+      },
+      {
+        icon: "map",
+        title: "Detaylı mülk sunumu",
+        text: "Fotoğraf galerisi, fiyat, konum ve temel özelliklerle karar verme sürecini destekler.",
+      },
+    ],
   },
   {
     id: "scandleted",
-    images: [scandleted1, scandleted2, scandleted3, scandleted4, scandleted5],
+    images: [scandletedProject],
     url: "https://scandleted-five.vercel.app/",
     github: "https://github.com/cansu05/Scandleted",
-    title: "Scandleted - E-Ticaret Web Uygulaması",
-    text: "Mum ürünleri için sergileme ve satın alma akışına odaklanan e-ticaret deneyimi.",
-    tags: ["React", "E-Ticaret", "UI Geliştirme"],
+    title: "Scandleted - Butik Mum Mağazası",
+    text: "Scandleted; mum ürünlerini butik mağaza hissiyle sunan, kullanıcıların ürünleri kolayca keşfetmesini, detaylarını incelemesini ve sepete ekleyerek alışveriş sürecini tamamlamasını sağlayan sade bir e-ticaret uygulamasıdır.",
+    tags: ["React", "E-Ticaret", "Ürün Listeleme"],
+    features: [
+      {
+        icon: "list",
+        title: "Düzenli ürün kataloğu",
+        text: "Kullanıcıların farklı mum seçeneklerini kolayca karşılaştırabileceği sade bir listeleme yapısı sağlar.",
+      },
+      {
+        icon: "shopping",
+        title: "Sepete ekleme akışı",
+        text: "Ürün seçimi, detay inceleme ve sepete ekleme adımlarını basit bir alışveriş deneyimine dönüştürür.",
+      },
+    ],
   },
   {
     id: "areka-corporate",
-    images: [arekaWebsite],
+    images: [arekaProject],
     url: "https://areka-corporate-website.vercel.app",
     github: "https://github.com/cansu05/Areka-Corporate-Website",
-    title: "Areka Carbon Hub - İklim Teknolojisi Platformu",
-    text: "Çok dilli kurumsal web sitesi ile sürdürülebilirlik çözümlerini erişilebilir biçimde sunuyor.",
-    tags: ["Kurumsal Web", "Çok Dilli", "Frontend"],
+    title: "Areka Carbon Hub - Kurumsal İklim Teknolojisi Web Sitesi",
+    text: "İklim teknolojisi çözümlerini profesyonel bir çizgide sunan; verinin netliğini ve kurumsal kimliği ön plana çıkaran bir web projesidir.",
+    tags: ["Kurumsal Web", "Çok Dilli", "İklim Teknolojisi"],
   },
   {
     id: "areka-dashboard",
-    images: [
-      arekaDashboard1,
-      arekaDashboard2,
-      arekaDashboard3,
-      arekaDashboard5,
-    ],
+    images: [arekaDashboardProject],
     url: "https://app.areka.ai/",
-    title: "Areka Carbon Hub - Dashboard Uygulaması",
-    text: "Kullanıcıların karbon emisyonlarını takip ve dengelemesini sağlayan dashboard deneyimi.",
-    tags: ["Dashboard", "Veri Görselleştirme", "Ürün Geliştirme"],
+    title: "Areka Carbon Hub - Karbon Yönetim Dashboard’u",
+    text: "Areka Dashboard; kullanıcıların karbon emisyonlarını görüntülemesini, dengeleme süreçlerini takip etmesini ve karbon kayıtlarını tek panelden yönetmesini sağlayan veri odaklı bir ürün deneyimidir.",
+    tags: ["Dashboard", "Veri Görselleştirme", "Karbon Takibi"],
+    features: [
+      {
+        icon: "chart",
+        title: "Emisyon takibi",
+        text: "Kullanıcının toplam, dengelenmiş ve dengelenmemiş karbon verilerini hızlıca görmesini sağlar.",
+      },
+      {
+        icon: "list",
+        title: "Kayıt yönetimi",
+        text: "NFT ve emisyon kayıtlarını tablo yapısıyla düzenli, izlenebilir ve yönetilebilir hale getirir.",
+      },
+      {
+        icon: "filter",
+        title: "Dengeleme akışı",
+        text: "Kullanıcıyı karbon etkisini azaltmaya yönelik aksiyonlara yönlendiren sade bir dashboard deneyimi sunar.",
+      },
+    ],
   },
   {
     id: "wessex-dashboard",
-    images: [
-      wessexDashboard1,
-      wessexDashboard2,
-      wessexDashboard3,
-      wessexDashboard4,
-      wessexDashboard5,
-      wessexDashboard6,
-      wessexDashboard7,
-      wessexDashboard8,
-      wessexDashboard9,
-      wessexDashboard10,
-      wessexDashboard11,
-      wessexDashboard12,
-      wessexDashboard13,
-      wessexDashboard14,
-      wessexDashboard15,
-    ],
+    images: [verilandProject],
     url: "https://searches.csu.azureapp.net/user/login",
-    title: "Wessex Searches - Kurumsal Dashboard Uygulaması",
-    text: "Sipariş, talep ve operasyon süreçlerini tek panelden yöneten dashboard katkısı.",
+    title: "Wessex Searches - Kurumsal Süreç Yönetim Paneli",
+    text: "Wessex Searches; sipariş, sorgu, talep ve müşteri iletişimi süreçlerini tek panelde birleştiren, operasyon ekiplerinin iş akışını daha kontrollü ve izlenebilir yönetmesini sağlayan kurumsal dashboard ürünüdür.",
     tags: ["Kurumsal Panel", "Dashboard", "Operasyon"],
+    features: [
+      {
+        icon: "chart",
+        title: "Dashboard görünümü",
+        text: "Özet metrikler, grafikler ve hızlı aksiyonlarla operasyonel durumu görünür hale getirir.",
+      },
+      {
+        icon: "list",
+        title: "Sorgu ve mesaj akışı",
+        text: "Müşteri sorgularını, mesajları ve iletişim detaylarını tek merkezden takip etmeyi sağlar.",
+      },
+      {
+        icon: "map",
+        title: "Sipariş ve konum akışı",
+        text: "Yeni sipariş oluşturma ve harita destekli lokasyon adımlarıyla süreci yönlendirir.",
+      },
+    ],
   },
   {
     id: "note-app",
-    images: [noteApp],
+    images: [noteProject],
     url: "https://note-app-gold-theta.vercel.app/",
     github: "https://github.com/cansu05/note-app",
-    title: "Note App - Not Yönetim Uygulaması",
-    text: "Not oluşturma, düzenleme ve sürükle-bırak ile sıralama odaklı not uygulaması.",
+    title: "Note Canvas - Esnek Not ve Fikir Panosu",
+    text: "Fikirlerinizi sınırlara hapsolmadan organize edin. Notları, sayfaları ve fikir kartlarını tek bir esnek tuval üzerinde toplayan, verimlilik odaklı dijital çalışma alanı.",
     tags: ["React", "Drag and Drop", "State Management"],
   },
   {
-    id: "rick-and-morty",
-    images: [rickAndMorty],
-    url: "https://ricky-and-morty-omega-seven.vercel.app/character",
-    github: "https://github.com/cansu05/RickyAndMorty",
-    title: "Rick and Morty - Karakter Kataloğu Uygulaması",
-    text: "Karakter keşfi, filtreleme ve detay inceleme özellikleri sunan katalog.",
-    tags: ["React", "API", "Listeleme"],
-  },
-  {
-    id: "task-flow",
-    images: [taskManagement],
-    github: "https://github.com/cansu05/Task-Flow",
-    title: "TaskFlow - Görev Yönetim Uygulaması",
-    text: "Ekiplerin görevlerini planlayıp takip ettiği sürükle-bırak destekli görev yönetimi.",
-    tags: ["Görev Yönetimi", "UI", "Takım Çalışması"],
-  },
-  {
     id: "blossom",
-    images: [blossom],
+    images: [botanicProject],
     github: "https://github.com/cansu05/Blossom",
-    title: "Blossom - Mobil Ürün Kataloğu Uygulaması",
-    text: "Çiçek ve bitki ürünlerinin mobilde kolayca keşfini sağlayan katalog uygulaması.",
+    title: "Blossom - Bitki Kataloğu ve Bakım Rehberi",
+    text: "Bitki dünyasını keşfetmenin en sade yolu. Favori bitkilerinizi bulun, detaylı bakım bilgilerine ulaşın ve koleksiyonunuzu kolayca yönetin.",
     tags: ["React Native", "Mobil", "Ürün Kataloğu"],
   },
 ];
@@ -285,4 +324,3 @@ export const contactMethods: ContactMethod[] = [
   },
   { label: "Adres", value: "Ankara", href: "#contact" },
 ];
-

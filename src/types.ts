@@ -20,8 +20,24 @@ export type Project = {
   text: string;
   tags: string[];
   images: string[];
+  features?: ProjectFeature[];
   url?: string;
   github?: string;
+};
+
+export type ProjectFeature = {
+  icon:
+    | "calendar"
+    | "list"
+    | "filter"
+    | "map"
+    | "chart"
+    | "shopping"
+    | "note"
+    | "mobile"
+    | "code";
+  title: string;
+  text: string;
 };
 
 export type ExperienceItem = {
