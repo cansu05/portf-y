@@ -86,7 +86,7 @@ function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
   return (
     <article className="relative py-12">
       <div className="grid items-center gap-20 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="max-w-2xl">
+        <div className="order-2 max-w-2xl lg:order-1">
           <h3 className="mt-8 font-display text-3xl leading-tight text-ink sm:text-4xl lg:text-5xl">
             {projectName}
           </h3>
@@ -105,7 +105,7 @@ function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
           <ProjectActions project={project} />
         </div>
 
-        <div className="relative">
+        <div className="relative order-1 lg:order-2">
           <img
             src={project.images[0]}
             alt={project.title}
