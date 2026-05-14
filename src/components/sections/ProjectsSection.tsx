@@ -95,7 +95,7 @@ function ProjectShowcase({ project, index }: ProjectShowcaseProps) {
           </p>
           <div className="mt-4 h-1 w-28 rounded-full bg-pink" />
 
-          <p className="mt-7 text-base leading-8 text-ink/75 sm:text-lg">
+          <p className="mt-7 whitespace-pre-line text-base leading-8 text-ink/75 sm:text-lg">
             {project.text}
           </p>
 
