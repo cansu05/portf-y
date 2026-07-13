@@ -3,11 +3,12 @@ import plannerProject from "../assets/planner-project.png";
 import estateProject from "../assets/estate-project.png";
 import scandletedProject from "../assets/scandleted-project.png";
 import arekaProject from "../assets/areka-project.png";
-import arekaDashboardProject from "../assets/areka-dashboard-project.png";
 import verilandProject from "../assets/veriland-project.png";
 import noteProject from "../assets/note-project.png";
 import botanicProject from "../assets/botanic-project.png";
 import tourShowProject from "../assets/tour.png";
+import yesilEtkiDashboardProject from "../assets/yesil-etki-dashboard.png";
+import yesilEtkiProject from "../assets/yesil-etki-web.png";
 
 import type {
   AboutCard,
@@ -198,18 +199,18 @@ export const projects: Project[] = [
   },
   {
     id: "areka-corporate",
-    images: [arekaProject],
-    url: "https://areka-corporate-website.vercel.app",
-    title: "Areka Carbon Hub - Kurumsal İklim Teknolojisi Web Sitesi",
-    text: "Areka Carbon Hub; karbon ayak izi takibi ve iklim teknolojisi çözümlerini kurumsal bir arayüzle sunan modern bir web sitesidir.\n\nPlatform; şirketin sürdürülebilirlik vizyonunu, blokzincir tabanlı güven yaklaşımını ve veri odaklı hizmetlerini net, profesyonel ve çok dilli bir deneyimle aktarır.",
+    images: [yesilEtkiProject],
+    url: "https://yesiletki.com/",
+    title: "Yeşil Etki - Kurumsal İklim Teknolojisi Web Sitesi",
+    text: "Yeşil Etki; karbon ayak izi takibi ve iklim teknolojisi çözümlerini kurumsal bir arayüzle sunan modern bir web sitesidir.\n\nPlatform; şirketin sürdürülebilirlik vizyonunu, blokzincir tabanlı güven yaklaşımını ve veri odaklı hizmetlerini net, profesyonel ve çok dilli bir deneyimle aktarır.",
     tags: ["Kurumsal Web", "Çok Dilli", "İklim Teknolojisi"],
   },
   {
     id: "areka-dashboard",
-    images: [arekaDashboardProject],
-    url: "https://app.areka.ai/",
-    title: "Areka Carbon Hub - Karbon Yönetim Dashboard’u",
-    text: "Areka Dashboard; karbon emisyonlarını, dengeleme süreçlerini ve kayıt yönetimini tek panelde birleştiren veri odaklı bir karbon yönetim ürünüdür.\n\nKullanıcılar toplam, dengelenmiş ve dengelenmemiş emisyon verilerini takip edebilir; karbon kayıtlarını tablo yapısıyla inceleyerek süreçlerini daha şeffaf ve yönetilebilir hale getirebilir.",
+    images: [yesilEtkiDashboardProject],
+    url: "https://app.yesiletki.com/",
+    title: "Yeşil Etki - Karbon Yönetim Dashboard’u",
+    text: "Yeşil Etki Dashboard; karbon emisyonlarını, dengeleme süreçlerini ve kayıt yönetimini tek panelde birleştiren veri odaklı bir karbon yönetim ürünüdür.\n\nKullanıcılar toplam, dengelenmiş ve dengelenmemiş emisyon verilerini takip edebilir; karbon kayıtlarını tablo yapısıyla inceleyerek süreçlerini daha şeffaf ve yönetilebilir hale getirebilir.",
     tags: ["Dashboard", "Veri Görselleştirme", "Karbon Takibi"],
     features: [
       {
